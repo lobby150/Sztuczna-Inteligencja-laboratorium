@@ -143,9 +143,129 @@
    =>
 	(retract ?rule))
 
+(defrule MAIN::b_fastfood_test
+	(not (fastfood ?))
+	(typical_dinner nie)
+   =>
+	(println "Czy nietradycyjne danie, fastfood? (tak / nie)")
+	(assert (fastfood (read))))
+
+(defrule MAIN::b_fastfood_iocheck
+	(fastfood ?fastfood)
+	?rule <- (fastfood ?)
+	(not (fastfood nie))
+	(not (fastfood tak))
+   =>
+	(retract ?rule))
+
+(defrule MAIN::b_pizza_test
+	(not (pizza ?))
+	(fastfood tak)
+   =>
+	(println "Czy pizza? (tak / nie)")
+	(assert (pizza (read))))
+
+(defrule MAIN::b_pizza_iocheck
+	(pizza ?pizza)
+	?rule <- (pizza ?)
+	(not (pizza nie))
+	(not (pizza tak))
+   =>
+	(retract ?rule))
+
+(defrule MAIN::b_hawaii_test
+	(not (hawaii ?))
+	(pizza tak)
+   =>
+	(println "Czy pizza hawajska? (tak / nie)")
+	(assert (hawaii (read))))
+
+(defrule MAIN::b_hawaii_iocheck
+	(hawaii ?hawaii)
+	?rule <- (hawaii ?)
+	(not (hawaii nie))
+	(not (hawaii tak))
+   =>
+	(retract ?rule))
+
+(defrule MAIN::b_capriciosa_test
+	(not (capriciosa ?))
+	(hawaii nie)
+   =>
+	(println "Czy pizza capriciosa? (tak / nie)")
+	(assert (capriciosa (read))))
+
+(defrule MAIN::b_capriciosa_iocheck
+	(capriciosa ?capriciosa)
+	?rule <- (capriciosa ?)
+	(not (capriciosa nie))
+	(not (capriciosa tak))
+   =>
+	(retract ?rule))
+
+(defrule MAIN::b_funghi_test
+	(not (funghi ?))
+	(capriciosa nie)
+   =>
+	(println "Czy pizza funghi? (tak / nie)")
+	(assert (funghi (read))))
+
+(defrule MAIN::b_funghi_iocheck
+	(funghi ?funghi)
+	?rule <- (funghi ?)
+	(not (funghi nie))
+	(not (funghi tak))
+   =>
+	(retract ?rule))
+
+(defrule MAIN::b_kebab_test
+	(not (kebab ?))
+	(pizza nie)
+   =>
+	(println "Czy kebab? (tak / nie)")
+	(assert (kebab (read))))
+
+(defrule MAIN::b_kebab_iocheck
+	(kebab ?kebab)
+	?rule <- (kebab ?)
+	(not (kebab nie))
+	(not (kebab tak))
+   =>
+	(retract ?rule))
+
+(defrule MAIN::b_mildsauce_test
+	(not (mildsauce ?))
+	(kebab tak)
+   =>
+	(println "Czy sos lagodny? (tak / nie)")
+	(assert (mildsauce (read))))
+
+(defrule MAIN::b_mildsauce_iocheck
+	(mildsauce ?mildsauce)
+	?rule <- (mildsauce ?)
+	(not (mildsauce nie))
+	(not (mildsauce tak))
+   =>
+	(retract ?rule))
+
+(defrule MAIN::b_spicysauce_test
+	(not (spicysauce ?))
+	(mildsauce nie)
+   =>
+	(println "Czy sos pikantny? (tak / nie)")
+	(assert (spicysauce (read))))
+
+(defrule MAIN::b_spicysauce_iocheck
+	(spicysauce ?spicysauce)
+	?rule <- (spicysauce ?)
+	(not (spicysauce nie))
+	(not (spicysauce tak))
+   =>
+	(retract ?rule))
+
 
 (defrule MAIN::food-0
-	(typical_dinner nie)
+	(meatType nie)
    =>
    (println "Deska serow, paluszki, pierogi ruskie")
    (assert (food (name "Deska serow, paluszki, pierogi ruskie"))))
@@ -159,41 +279,96 @@
 (defrule MAIN::food-2
 	(meatloaf tak)
    =>
-   (println "Deska serow, paluszki, kotlet mielony")
+   (println "Deska serow, paluszki, bimber, kotlet mielony")
    (assert (food (name "Deska serow, paluszki, kotlet mielony"))))
 
 (defrule MAIN::food-3
 	(meatloaf nie)
    =>
-   (println "Deska serow, paluszki, kotlet schabowy")
+   (println "Deska serow, paluszki, bimber, kotlet schabowy")
    (assert (food (name "Deska serow, paluszki, kotlet schabowy"))))
 
 (defrule MAIN::food-4
 	(chine tak)
    =>
-   (println "Deska serow, paluszki, karkowka")
+   (println "Deska serow, paluszki, bimber, karkowka")
    (assert (food (name "Deska serow, paluszki, karkowka"))))
 
 (defrule MAIN::food-5
 	(haunch tak)
    =>
-   (println "Deska serow, paluszki, udziec")
+   (println "Deska serow, paluszki, bimber, udziec")
    (assert (food (name "Deska serow, paluszki, udziec"))))
 
 (defrule MAIN::food-6
 	(beefloin tak)
    =>
-   (println "Deska serow, paluszki, poledwica wolowa")
+   (println "Deska serow, paluszki, bimber, poledwica wolowa")
    (assert (food (name "Deska serow, paluszki, poledwica wolowa"))))
 
 (defrule MAIN::food-7
 	(beefloin nie)
    =>
-   (println "Deska serow, paluszki, poledwica wieprzowa")
+   (println "Deska serow, paluszki, bimber, poledwica wieprzowa")
    (assert (food (name "Deska serow, paluszki, poledwica wieprzowa"))))
 
 (defrule MAIN::food-8
 	(loin nie)
    =>
-   (println "Deska serow, paluszki, dziczyzna")
+   (println "Deska serow, paluszki, bimber, dziczyzna")
    (assert (food (name "Deska serow, paluszki, dziczyzna"))))
+
+
+(defrule MAIN::food-9
+	(fastfood nie)
+   =>
+   (println "Deska serow, paluszki, bimber")
+   (assert (food (name "Deska serow, paluszki, bimber"))))
+
+(defrule MAIN::food-10
+	(hawaii tak)
+   =>
+   (println "Deska serow, paluszki, bimber, pizza hawajska")
+   (assert (food (name "Deska serow, paluszki, bimber, pizza hawajska"))))
+
+(defrule MAIN::food-11
+	(capriciosa tak)
+   =>
+   (println "Deska serow, paluszki, bimber, pizza capriciosa")
+   (assert (food (name "Deska serow, paluszki, bimber, pizza capriciosa"))))
+
+(defrule MAIN::food-12
+	(funghi tak)
+   =>
+   (println "Deska serow, paluszki, bimber, pizza funghi")
+   (assert (food (name "Deska serow, paluszki, bimber, pizza funghi"))))
+
+(defrule MAIN::food-13
+	(funghi nie)
+   =>
+   (println "Deska serow, paluszki, bimber, pizza cztery sery")
+   (assert (food (name "Deska serow, paluszki, bimber, pizza cztery sery"))))
+
+(defrule MAIN::food-14
+	(kebab nie)
+   =>
+   (println "Deska serow, paluszki, bimber, burger z wolowina")
+   (assert (food (name "Deska serow, paluszki, bimber, burger z wolowina"))))
+
+(defrule MAIN::food-15
+	(mildsauce tak)
+   =>
+   (println "Deska serow, paluszki, bimber, kebab z sosem lagodnym")
+   (assert (food (name "Deska serow, paluszki, bimber, kebab z sosem lagodnym"))))
+
+(defrule MAIN::food-16
+	(spicysauce nie)
+   =>
+   (println "Deska serow, paluszki, bimber, kebab z sosem slodko-kwasnym")
+   (assert (food (name "Deska serow, paluszki, bimber, kebab z sosem slodko-kwasnym"))))
+
+(defrule MAIN::food-17
+	(spicysauce tak)
+   =>
+   (println "Deska serow, paluszki, bimber, kebab z sosem pikantnym")
+   (assert (food (name "Deska serow, paluszki, bimber, kebab z sosem pikantnym"))))

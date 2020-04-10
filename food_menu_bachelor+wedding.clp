@@ -491,6 +491,65 @@
 	=>
 	(retract ?rule))
 
+(defrule MAIN::s_zupa_test
+		(not (zupa ?))
+		(funeralmeal tak)
+	=>
+	(println "Czy zupa? (tak / nie)")
+	(assert (zupa (read))))
+
+(defrule MAIN::s_zupa_iocheck
+		(zupa ?zupa)
+	?rule <- (zupa ?)
+	(not (zupa nie))
+	(not (zupa tak))
+	=>
+	(retract ?rule))
+
+(defrule MAIN::s_rosol_test
+		(not (rosol ?))
+		(zupa tak)
+	=>
+	(println "Czy rosol? (tak / nie)")
+	(assert (rosol (read))))
+
+(defrule MAIN::s_rosol_iocheck
+		(rosol ?rosol)
+		?rule <- (rosol ?)
+		(not (rosol nie))
+		(not (rosol tak))
+	=>
+	(retract ?rule))
+
+(defrule MAIN::s_barszcz_test
+		(not (barszcz ?))
+		(rosol nie)
+	=>
+	(println "Czy barszcz? (tak / nie)")
+	(assert (barszcz (read))))
+
+(defrule MAIN::s_barszcz_iocheck
+		(barszcz ?barszcz)
+		?rule <- (barszcz ?)
+		(not (barszcz nie))
+		(not (barszcz tak))
+	=>
+	(retract ?rule))
+
+(defrule MAIN::s_zurek_test
+		(not (zurek ?))
+		(barszcz nie)
+	=>
+	(println "Czy zurek? (tak / nie )")
+	(assert (zurek (read))))
+
+(defrule MAIN::s_zurek_iocheck
+		(zurek ?zurek)
+		?rule <- (zurek ?)
+		(not (zurek nie))
+		(not (zurek tak))
+	=>
+	(retract ?rule))
 
 (defrule MAIN::birthdayparty_test
 	(not (birthdayparty ?))
@@ -718,8 +777,37 @@
    =>
    (println "Rosol, ziemniaki, pyzy, udziec, gulasz wolowy")
    (assert (food (name "Rosol, ziemniaki, pyzy, udziec, gulasz wolowy"))))
+
+(defrule MAIN::food-32
+	(zupa nie)
+	=>
+	(println "Kotlet schabowy, ziemniaki, pyzy, sos pieczeniowy")
+	(assert (food (name "Kotlet schabowy, ziemniaki, pyzy, sos pieczeniowy"))))
+
+(defrule MAIN::food-33
+	(rosol tak)
+	=>
+	(println "Kotlet schabowy, ziemniaki, pyzy, sos pieczeniowy, rosol")
+	(assert (food (name "Kotlet schabowy, ziemniaki, pyzy, sos pieczeniowy, rosol"))))   
    
-   
+(defrule MAIN::food-34
+	(barszcz tak)
+	=>
+	(println "Kotlet schabowy, ziemniaki, pyzy, sos pieczeniowy, barszcz")
+	(assert (food (name "Kotlet schabowy, ziemniaki, pyzy, sos pieczeniowy, barszcz"))))   
+
+(defrule MAIN::food-35
+	(zurek tak)
+	=>
+	(println "Kotlet schabowy, ziemniaki, pyzy, sos pieczeniowy, zurek")
+	(assert (food (name "Kotlet schabowy, ziemniaki, pyzy, sos pieczeniowy, zurek"))))   
+
+(defrule MAIN::food-36
+	(zurek nie)
+	=>
+	(println "Kotlet schabowy, ziemniaki, pyzy, sos pieczeniowy, zupa grochowa")
+	(assert (food (name "Kotlet schabowy, ziemniaki, pyzy, sos pieczeniowy, zupa grochowa"))))   
+
 (defrule MAIN::end
 	(businessmeeting nie)
 	=>

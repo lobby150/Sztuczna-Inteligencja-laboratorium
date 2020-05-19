@@ -1,374 +1,477 @@
-(deftemplate MAIN::food
-   (slot name (type STRING)))
+(deftemplate kategoria
+    (slot k_typ_imprezy)
+    (slot k_wyznanie (default none))
+    (slot k_wiek (default none))
+    (slot k_typ_diety (default none))
+    (slot k_rodzaj_kuchni (default none)))
 
-(defrule MAIN::bachelorparty_test
-	(not (bachelor ?))
-   =>
-   (println "Czy wieczor kawalerski? (tak / nie)")
-   (assert (bachelor (read))))
+(defrule MAIN::ask_typ_imprezy
+    (not (impreza ?))
+=>
+    (println "Jaka impreza? (wesele / stypa / urodziny / spotkanie_biznesowe / wieczor_kawalerski)")
+    (assert(impreza(read))))
 
-(defrule MAIN::b_dinnerType_test
-	(not (typical_dinner ?))
-	(bachelor tak)
-   =>
-   (println "Menu tradycyjne? (tak / nie)")
-   (assert (typical_dinner (read))))
-
-(defrule MAIN::b_dinnerType_iocheck
-	(typical_dinner ?typical_dinner)
-   ?rule <- (typical_dinner ?)
-   (not (typical_dinner nie))
-	(not (typical_dinner tak))
-   =>
-   (retract ?rule))
-
-(defrule MAIN::b_meatType_test
-	(not (meatType ?))
-	(typical_dinner tak)
-   =>
-   (println "Czy mieso tradycyjne? (tak / nie)")
-   (assert (meatType (read))))
-
-(defrule MAIN::b_meatType_iocheck
-	(meatType ?meatType)
-   ?rule <- (meatType ?)
-   (not (meatType nie))
-	(not (meatType tak))
-   =>
-   (retract ?rule))
-
-(defrule MAIN::b_cutlet_test
-	(not (cutlet ?))
-	(meatType tak)
-   =>
-   (println "Miesa Tradycyjne")
-   (println "Czy kotlet? (tak / nie)")
-   (assert (cutlet (read))))
-
-(defrule MAIN::b_cutlet_iocheck
-	(cutlet ?cutlet)
-   ?rule <- (cutlet ?)
-   (not (cutlet nie))
-	(not (cutlet tak))
-   =>
-   (retract ?rule))
-
-(defrule MAIN::b_soycutlet_test
-	(not (soycutlet ?))
-	(cutlet tak)
-   =>
-   (println "Czy kotlet sojowy? (tak / nie)")
-   (assert (soycutlet (read))))
-
-(defrule MAIN::b_soycutlet_iocheck
-	(soycutlet ?soycutlet)
-   ?rule <- (soycutlet ?)
-   (not (soycutlet nie))
-	(not (soycutlet tak))
-   =>
-   (retract ?rule))
-
-(defrule MAIN::b_meatloaf_test
-	(not (meatloaf ?))
-	(soycutlet nie)
-   =>
-   (println "Czy kotlet mielony? (tak / nie)")
-   (assert (meatloaf (read))))
-
-(defrule MAIN::b_meatloaf_iocheck
-	(meatloaf ?meatloaf)
-   ?rule <- (meatloaf ?)
-   (not (meatloaf nie))
-	(not (meatloaf tak))
-   =>
-   (retract ?rule))
-
-(defrule MAIN::b_chine_test
-	(not (chine ?))
-	(cutlet nie)
-   =>
-   (println "Czy karkowka? (tak / nie)")
-   (assert (chine (read))))
-
-(defrule MAIN::b_chine_iocheck
-	(chine ?chine)
-   ?rule <- (chine ?)
-   (not (chine nie))
-	(not (chine tak))
-   =>
-   (retract ?rule))
-
-(defrule MAIN::b_haunch_test
-	(not (haunch ?))
-	(chine nie)
-   =>
-   (println "Czy udziec? (tak / nie)")
-   (assert (haunch (read))))
-
-(defrule MAIN::b_haunch_iocheck
-	(haunch ?haunch)
-   ?rule <- (haunch ?)
-   (not (haunch nie))
-	(not (haunch tak))
-   =>
-   (retract ?rule))
-
-(defrule MAIN::b_loin_test
-	(not (loin ?))
-	(haunch nie)
-   =>
-	(println "Czy poledwica? (tak / nie)")
-	(assert (loin (read))))
-
-(defrule MAIN::b_loin_iocheck
-	(loin ?loin)
-	?rule <- (loin ?)
-	(not (loin nie))
-	(not (loin tak))
-   =>
-	(retract ?rule))
-
-(defrule MAIN::b_beefloin_test
-	(not (beefloin ?))
-	(loin tak)
-   =>
-	(println "Czy Poledwica wolowa (tak / nie)")
-	(assert (beefloin (read))))
-
-(defrule MAIN::b_beefloin_iocheck
-	(beefloin ?beefloin)
-	?rule <- (beefloin ?)
-	(not (beefloin nie))
-	(not (beefloin tak))
-   =>
-	(retract ?rule))
-
-(defrule MAIN::b_fastfood_test
-	(not (fastfood ?))
-	(typical_dinner nie)
-   =>
-	(println "Czy nietradycyjne danie, fastfood? (tak / nie)")
-	(assert (fastfood (read))))
-
-(defrule MAIN::b_fastfood_iocheck
-	(fastfood ?fastfood)
-	?rule <- (fastfood ?)
-	(not (fastfood nie))
-	(not (fastfood tak))
-   =>
-	(retract ?rule))
-
-(defrule MAIN::b_pizza_test
-	(not (pizza ?))
-	(fastfood tak)
-   =>
-	(println "Czy pizza? (tak / nie)")
-	(assert (pizza (read))))
-
-(defrule MAIN::b_pizza_iocheck
-	(pizza ?pizza)
-	?rule <- (pizza ?)
-	(not (pizza nie))
-	(not (pizza tak))
-   =>
-	(retract ?rule))
-
-(defrule MAIN::b_hawaii_test
-	(not (hawaii ?))
-	(pizza tak)
-   =>
-	(println "Czy pizza hawajska? (tak / nie)")
-	(assert (hawaii (read))))
-
-(defrule MAIN::b_hawaii_iocheck
-	(hawaii ?hawaii)
-	?rule <- (hawaii ?)
-	(not (hawaii nie))
-	(not (hawaii tak))
-   =>
-	(retract ?rule))
-
-(defrule MAIN::b_capriciosa_test
-	(not (capriciosa ?))
-	(hawaii nie)
-   =>
-	(println "Czy pizza capriciosa? (tak / nie)")
-	(assert (capriciosa (read))))
-
-(defrule MAIN::b_capriciosa_iocheck
-	(capriciosa ?capriciosa)
-	?rule <- (capriciosa ?)
-	(not (capriciosa nie))
-	(not (capriciosa tak))
-   =>
-	(retract ?rule))
-
-(defrule MAIN::b_funghi_test
-	(not (funghi ?))
-	(capriciosa nie)
-   =>
-	(println "Czy pizza funghi? (tak / nie)")
-	(assert (funghi (read))))
-
-(defrule MAIN::b_funghi_iocheck
-	(funghi ?funghi)
-	?rule <- (funghi ?)
-	(not (funghi nie))
-	(not (funghi tak))
-   =>
-	(retract ?rule))
-
-(defrule MAIN::b_kebab_test
-	(not (kebab ?))
-	(pizza nie)
-   =>
-	(println "Czy kebab? (tak / nie)")
-	(assert (kebab (read))))
-
-(defrule MAIN::b_kebab_iocheck
-	(kebab ?kebab)
-	?rule <- (kebab ?)
-	(not (kebab nie))
-	(not (kebab tak))
-   =>
-	(retract ?rule))
-
-(defrule MAIN::b_mildsauce_test
-	(not (mildsauce ?))
-	(kebab tak)
-   =>
-	(println "Czy sos lagodny? (tak / nie)")
-	(assert (mildsauce (read))))
-
-(defrule MAIN::b_mildsauce_iocheck
-	(mildsauce ?mildsauce)
-	?rule <- (mildsauce ?)
-	(not (mildsauce nie))
-	(not (mildsauce tak))
-   =>
-	(retract ?rule))
-
-(defrule MAIN::b_spicysauce_test
-	(not (spicysauce ?))
-	(mildsauce nie)
-   =>
-	(println "Czy sos pikantny? (tak / nie)")
-	(assert (spicysauce (read))))
-
-(defrule MAIN::b_spicysauce_iocheck
-	(spicysauce ?spicysauce)
-	?rule <- (spicysauce ?)
-	(not (spicysauce nie))
-	(not (spicysauce tak))
-   =>
-	(retract ?rule))
+(defrule MAIN::typ_imprezy_iocheck
+    (impreza ?impreza)
+    ?rule <- (impreza ?)
+(not (impreza wesele))
+(not (impreza stypa))
+(not (impreza urodziny))
+(not (impreza spotkanie_biznesowe))
+(not (impreza wieczor_kawalerski))
+=>
+(retract ?rule))
 
 
-(defrule MAIN::food-0
-	(meatType nie)
-   =>
-   (println "Deska serow, paluszki, pierogi ruskie")
-   (assert (food (name "Deska serow, paluszki, pierogi ruskie"))))
+(defrule MAIN::ask_wyznanie
+    (not (wyznanie ?))
+    (or
+    (impreza wesele)
+    (impreza stypa)
+    (impreza spotkanie_biznesowe)
+    (impreza wieczor_kawalerski)
+    (impreza urodziny))
+=>
+    (assert (kategoria (k_typ_imprezy impreza)))
+    (println "Jakie wyznanie? (islam / chrzescijanstwo / judaizm)")
+    (assert (wyznanie (read))))
 
-(defrule MAIN::food-1
-	(soycutlet tak)
-   =>
-   (println "Deska serow, paluszki, bimber, kotlet sojowy")
-   (assert (food (name "Deska serow, paluszki, bimber, kotlet sojowy"))))
-
-(defrule MAIN::food-2
-	(meatloaf tak)
-   =>
-   (println "Deska serow, paluszki, bimber, kotlet mielony")
-   (assert (food (name "Deska serow, paluszki, kotlet mielony"))))
-
-(defrule MAIN::food-3
-	(meatloaf nie)
-   =>
-   (println "Deska serow, paluszki, bimber, kotlet schabowy")
-   (assert (food (name "Deska serow, paluszki, kotlet schabowy"))))
-
-(defrule MAIN::food-4
-	(chine tak)
-   =>
-   (println "Deska serow, paluszki, bimber, karkowka")
-   (assert (food (name "Deska serow, paluszki, karkowka"))))
-
-(defrule MAIN::food-5
-	(haunch tak)
-   =>
-   (println "Deska serow, paluszki, bimber, udziec")
-   (assert (food (name "Deska serow, paluszki, udziec"))))
-
-(defrule MAIN::food-6
-	(beefloin tak)
-   =>
-   (println "Deska serow, paluszki, bimber, poledwica wolowa")
-   (assert (food (name "Deska serow, paluszki, poledwica wolowa"))))
-
-(defrule MAIN::food-7
-	(beefloin nie)
-   =>
-   (println "Deska serow, paluszki, bimber, poledwica wieprzowa")
-   (assert (food (name "Deska serow, paluszki, poledwica wieprzowa"))))
-
-(defrule MAIN::food-8
-	(loin nie)
-   =>
-   (println "Deska serow, paluszki, bimber, dziczyzna")
-   (assert (food (name "Deska serow, paluszki, dziczyzna"))))
+(defrule MAIN::wyznanie_iocheck
+    (wyznanie ?wyznanie)
+    ?rule <- (wyznanie ?)
+(not (wyznanie islam))
+(not (wyznanie chrzescijanstwo))
+(not (wyznanie judaizm))
+=>
+(retract ?rule))
 
 
-(defrule MAIN::food-9
-	(fastfood nie)
-   =>
-   (println "Deska serow, paluszki, bimber")
-   (assert (food (name "Deska serow, paluszki, bimber"))))
+(defrule MAIN::ask_wiek
+    (not (wiek ?))
+    (or
+    (wyznanie islam)
+    (wyznanie chrzescijanstwo)
+    (wyznanie judaizm))
+=>
+    (assert (kategoria (k_wyznanie wyznanie)))
+    (println "Jaki wiek?")
+    (assert (wiek (read))))
 
-(defrule MAIN::food-10
-	(hawaii tak)
-   =>
-   (println "Deska serow, paluszki, bimber, pizza hawajska")
-   (assert (food (name "Deska serow, paluszki, bimber, pizza hawajska"))))
+(defrule MAIN::wiek_iocheck
+    (wiek ?wiek)
+    ?rule <- (wiek ?)
+(or (test(> ?wiek 120))(test(<= ?wiek 0))(not(test(integerp ?wiek))))
+=>
+(retract ?rule))
 
-(defrule MAIN::food-11
-	(capriciosa tak)
-   =>
-   (println "Deska serow, paluszki, bimber, pizza capriciosa")
-   (assert (food (name "Deska serow, paluszki, bimber, pizza capriciosa"))))
+(defrule MAIN::wiek_test1
+    (wiek ?wiek)
+    (test (> ?wiek 18))
+    (test (< ?wiek 120))
+=>
+(assert (wiek_test pelnoletni)))
 
-(defrule MAIN::food-12
-	(funghi tak)
-   =>
-   (println "Deska serow, paluszki, bimber, pizza funghi")
-   (assert (food (name "Deska serow, paluszki, bimber, pizza funghi"))))
+(defrule MAIN::wiek_test2
+    (wiek ?wiek)
+    (test (< ?wiek 18))
+    (test (> ?wiek 0))
+=>
+(assert (wiek_test niepelnoletni)))
 
-(defrule MAIN::food-13
-	(funghi nie)
-   =>
-   (println "Deska serow, paluszki, bimber, pizza cztery sery")
-   (assert (food (name "Deska serow, paluszki, bimber, pizza cztery sery"))))
 
-(defrule MAIN::food-14
-	(kebab nie)
-   =>
-   (println "Deska serow, paluszki, bimber, burger z wolowina")
-   (assert (food (name "Deska serow, paluszki, bimber, burger z wolowina"))))
+(defrule MAIN::ask_typ_diety
+    (not (typ_diety ?))
+    (wiek ?wiek)
+=>
+    (assert (kategoria (k_wiek wiek)))
+    (println "Jaki typ diety? (miesna / wegetarianska)")
+    (assert (typ_diety (read))))
 
-(defrule MAIN::food-15
-	(mildsauce tak)
-   =>
-   (println "Deska serow, paluszki, bimber, kebab z sosem lagodnym")
-   (assert (food (name "Deska serow, paluszki, bimber, kebab z sosem lagodnym"))))
+(defrule MAIN::typ_diety_iocheck
+    (typ_diety ?typ_diety)
+    ?rule <- (typ_diety ?)
+(not (typ_diety miesna))
+(not (typ_diety wegetarianska))
+=>
+(retract ?rule))
 
-(defrule MAIN::food-16
-	(spicysauce nie)
-   =>
-   (println "Deska serow, paluszki, bimber, kebab z sosem slodko-kwasnym")
-   (assert (food (name "Deska serow, paluszki, bimber, kebab z sosem slodko-kwasnym"))))
 
-(defrule MAIN::food-17
-	(spicysauce tak)
-   =>
-   (println "Deska serow, paluszki, bimber, kebab z sosem pikantnym")
-   (assert (food (name "Deska serow, paluszki, bimber, kebab z sosem pikantnym"))))
+(defrule MAIN::ask_rodzaj_kuchni
+    (not (rodzaj_kuchni ?))
+    (or
+    (typ_diety miesna)
+    (typ_diety wegetarianska))
+=>  
+    (assert (kategoria (k_typ_diety typ_diety)))
+    (println "Jaki rodzaj kuchni? (europejska / azjatycka)")
+    (assert (rodzaj_kuchni (read)))
+    (assert (kategoria (k_rodzaj_kuchni rodzaj_kuchni))))
+
+(defrule MAIN::rodzaj_kuchni_iocheck
+    (rodzaj_kuchni ?rodzaj_kuchni)
+    ?rule <- (rodzaj_kuchni ?)
+(not (rodzaj_kuchni europejska))
+(not (rodzaj_kuchni azjatycka))
+=>
+(retract ?rule))
+
+
+(defrule MAIN::menu-1
+    (impreza wesele)
+    (wyznanie islam)
+    (wiek_test niepelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni europejska)
+=>
+(println "Tort wisniowy z beza, pasta z baklazana, pieczone ziemniaki, salatka z pora, sok jablkowy."))
+
+(defrule MAIN::menu-2
+    (impreza wesele)
+    (wyznanie islam)
+    (wiek_test niepelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Tort pomaranczowy z marakuja, sajgonki z warzywami, krewetki z orzechami, napoj aloesowy."))
+
+(defrule MAIN::menu-3
+    (impreza wesele)
+    (wyznanie islam)
+    (wiek_test pelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni europejska)
+=>
+(println "Tort wisniowy z beza, pasta z baklazana, pieczone ziemniaki, salatka z pora, sok jablkowy, wodka Finlandia."))
+
+(defrule MAIN::menu-4
+    (impreza wesele)
+    (wyznanie islam)
+    (wiek_test pelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Tort pomaranczowy z marakuja, sajgonki z warzywami, krewetki z orzechami, napoj aloesowy,sake."))
+
+(defrule MAIN::menu-5
+    (impreza wesele)
+    (wyznanie islam)
+    (wiek_test niepelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni europejska)
+=>
+(println "Grillowany stek, salata, ziemniaki, winoTort wiśniowy z bezą, kaczka nadziewana, pyzy, sos pieczeniowy, sok jabłkowy."))
+
+(defrule MAIN::menu-6
+    (impreza wesele)
+    (wyznanie islam)
+    (wiek_test niepelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Tort pomarańczowy z marakują, kurczak w cieście w sosie sojowym, ryż basmati, sos curry, napój aloesowy."))
+
+(defrule MAIN::menu-7
+    (impreza wesele)
+    (wyznanie islam)
+    (wiek_test pelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni europejska)
+=>
+(println "Tort wiśniowy z bezą, kaczka nadziewana, pyzy, sos pieczeniowy, sok jabłkowy, wódka Finlandia."))
+
+(defrule MAIN::menu-8
+    (impreza wesele)
+    (wyznanie islam)
+    (wiek_test pelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Tort pomarańczowy z marakują, kurczak w cieście w sosie sojowym, ryż basmati, sos curry, napój aloesowy, sake."))
+
+(defrule MAIN::menu-9
+    (impreza wesele)
+    (wyznanie chrzescijanstwo)
+    (wiek_test niepelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni europejska)
+=>
+(println "Tort truskawkowy, zupa z grzybów leśnych, ziemniaki, sos grzybowy, cukinia zapiekana z pomidorami i serem, sok pomarańczowy."))
+
+(defrule MAIN::menu-10
+    (impreza wesele)
+    (wyznanie chrzescijanstwo)
+    (wiek_test niepelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Tort z liczi, zupa z grzybami mun, ryż basmati z sosem curry, sajgonki warzywne, napój o smaku marakui."))
+
+(defrule MAIN::menu-11
+    (impreza wesele)
+    (wyznanie chrzescijanstwo)
+    (wiek_test pelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni europejska)
+=>
+(println "Tort truskawkowy, zupa z grzybów leśnych, ziemniaki, sos grzybowy, cukinia zapiekana z pomidorami i serem, sok pomarańczowy, wódka Finlandia."))
+
+(defrule MAIN::menu-12
+    (impreza wesele)
+    (wyznanie chrzescijanstwo)
+    (wiek_test pelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Tort z liczi, zupa z grzybami mun, ryż basmati z sosem curry, sajgonki warzywne, napój o smaku marakui, sake."))
+
+(defrule MAIN::menu-13
+    (impreza wesele)
+    (wyznanie chrzescijanstwo)
+    (wiek_test niepelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni europejska)
+=>
+(println "Tort truskawowy, udziec wieprzowy, pieczone ziemniaki z sosem czosnkowym, surówka z jabłkiem, sok z czarnej porzeczki."))
+
+(defrule MAIN::menu-14
+    (impreza wesele)
+    (wyznanie chrzescijanstwo)
+    (wiek_test niepelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Tort z liczi, krewetki zapiekane z migdałami, chińskie pierożki z wieprzowiną, surówka z awokado, napój aloesowy."))
+
+(defrule MAIN::menu-15
+    (impreza wesele)
+    (wyznanie chrzescijanstwo)
+    (wiek_test pelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni europejska)
+=>
+(println "Tort truskawowy, udziec wieprzowy, pieczone ziemniaki z sosem czosnkowym, surówka z jabłkiem, sok z czarnej porzeczki, wódka Finlandia."))
+
+(defrule MAIN::menu-16
+    (impreza wesele)
+    (wyznanie chrzescijanstwo)
+    (wiek_test pelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Tort z liczi, krewetki zapiekane z migdałami, chińskie pierożki z wieprzowiną, surówka z awokado, napój aloesowy, sake."))
+
+(defrule MAIN::menu-17
+    (impreza wesele)
+    (wyznanie judaizm)
+    (wiek_test niepelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni europejska)
+=>
+(println "Teiglach, czulent z ogórkami, zupa porowa z miodem, kulki z siekanej ryby, sok jabłkowy."))
+
+(defrule MAIN::menu-18
+    (impreza wesele)
+    (wyznanie judaizm)
+    (wiek_test niepelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Teiglach, czulent z ogórkami, zupa porowa z miodem, kulki z siekanej ryby z sosem sojowym, napój z marakui."))
+
+(defrule MAIN::menu-19
+    (impreza wesele)
+    (wyznanie judaizm)
+    (wiek_test pelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni europejska)
+=>
+(println "Teiglach, czulent z ogórkami, zupa porowa z miodem, kulki z siekanej ryby, sok jabłkowy, wódka Absolut."))
+
+(defrule MAIN::menu-20
+    (impreza wesele)
+    (wyznanie judaizm)
+    (wiek_test pelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Teiglach, czulent z ogórkami, zupa porowa z miodem, kulki z siekanej ryby z sosem sojowym, napój z marakui, sake."))
+
+(defrule MAIN::menu-21
+    (impreza wesele)
+    (wyznanie judaizm)
+    (wiek_test niepelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni europejska)
+=>
+(println "Teiglach, czulent z jagnięciną, zupa warzywna z miodem, knyszes z kurczakiem, sok z czarnej porzeczki."))
+
+(defrule MAIN::menu-22
+    (impreza wesele)
+    (wyznanie judaizm)
+    (wiek_test niepelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Teiglach, czulent z jagnięcina i nasionami sezamu, knyszesz z kurczakiem w sosie sojowym, zupa z grzybami mun, napój o smaku liczi."))
+
+(defrule MAIN::menu-23
+    (impreza wesele)
+    (wyznanie judaizm)
+    (wiek_test pelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni europejska)
+=>
+(println "Teiglach, czulent z jagnięciną, zupa warzywna z miodem, knyszes z kurczakiem, sok z czarnej porzeczki, wódka Absolut."))
+
+(defrule MAIN::menu-24
+    (impreza wesele)
+    (wyznanie judaizm)
+    (wiek_test pelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Teiglach, czulent z jagnięcina i nasionami sezamu, knyszesz z kurczakiem w sosie sojowym, zupa z grzybami mun, napój o smaku liczi, sake."))
+
+(defrule MAIN::menu-25
+    (impreza stypa)
+    (wyznanie islam)
+    (wiek_test niepelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni europejska)
+=>
+(println "Faszerowany bakłażan z młodymi ziemniakami, zupa pomidorowa z kluskami, ciasto drożdzowe z truskawkami, sok jabłkowy."))
+
+(defrule MAIN::menu-26
+    (impreza stypa)
+    (wyznanie islam)
+    (wiek_test niepelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Ryż curry z warzywami, zupa z grzybami mun i nasionami sezamu, placek bananowy z orzechami, napój aloesowy."))
+
+(defrule MAIN::menu-27
+    (impreza stypa)
+    (wyznanie islam)
+    (wiek_test pelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni europejska)
+=>
+(println "Faszerowany bakłażan z młodymi ziemniakami, zupa pomidorowa z kluskami, ciasto drożdzowe z truskawkami, sok jabłkowy."))
+
+(defrule MAIN::menu-28
+    (impreza stypa)
+    (wyznanie islam)
+    (wiek_test pelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni azjatycka)
+=>
+(println " Ryż curry z warzywami, zupa z grzybami mun i nasionami sezamu, placek bananowy z orzechami, napój aloesowy."))
+
+(defrule MAIN::menu-29
+    (impreza stypa)
+    (wyznanie islam)
+    (wiek_test niepelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni europejska)
+=>
+(println "Kotlety drobiowe, ziemniaki, sos koperkowy, rosół, sernik,  sok jabłkowy."))
+
+(defrule MAIN::menu-30
+    (impreza stypa)
+    (wyznanie islam)
+    (wiek_test niepelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Kotlety drobiowe z przyprawą curry, ryż z warzywami orientalnymi, placek bananowy z orzechami, napój aloesowy."))
+
+(defrule MAIN::menu-31
+    (impreza stypa)
+    (wyznanie islam)
+    (wiek_test pelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni europejska)
+=>
+(println "Kotlety drobiowe, ziemniaki, sos koperkowy, rosół, sernik,  sok jabłkowy."))
+
+(defrule MAIN::menu-32
+    (impreza stypa)
+    (wyznanie islam)
+    (wiek_test pelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Kotlety drobiowe z przyprawą curry, ryż z warzywami orientalnymi, placek bananowy z orzechami, napój aloesowy."))
+
+(defrule MAIN::menu-33
+    (impreza stypa)
+    (wyznanie chrzescijanstwo)
+    (wiek_test niepelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni europejska)
+=>
+(println "Zupa pomidorowa, ziemniaki w sosie koperkowym, sałatka warzywna, kotlety jajeczne, sok jabłkowy."))
+
+(defrule MAIN::menu-34
+    (impreza stypa)
+    (wyznanie chrzescijanstwo)
+    (wiek_test niepelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Zupa z grzybami mun, ryż w sosie curry, surówka z warzyw orientalnych, kotlet z cieciorki, napój z aloesu."))
+
+(defrule MAIN::menu-35
+    (impreza stypa)
+    (wyznanie chrzescijanstwo)
+    (wiek_test pelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni europejska)
+=>
+(println "Zupa pomidorowa, ziemniaki w sosie koperkowym, sałatka warzywna, kotlety jajeczne, sok jabłkowy."))
+
+(defrule MAIN::menu-36
+    (impreza stypa)
+    (wyznanie chrzescijanstwo)
+    (wiek_test pelnoletni)
+    (typ_diety wegetarianska)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Zupa z grzybami mun, ryż w sosie curry, surówka z warzyw orientalnych, kotlet z cieciorki, napój z aloesu."))
+
+(defrule MAIN::menu-37
+    (impreza stypa)
+    (wyznanie chrzescijanstwo)
+    (wiek_test niepelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni europejska)
+=>
+(println "Kotlet schabowy, ziemniaki duszone, rosół, placek drożdzowy, sok jabłkowy."))
+
+(defrule MAIN::menu-38
+    (impreza stypa)
+    (wyznanie chrzescijanstwo)
+    (wiek_test niepelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Gulasz wieprzowy Gong Bao, ryż basmati, sernik z wiórkami kokosowymi, surówka z pora, napój z aloesu."))
+
+(defrule MAIN::menu-39
+    (impreza stypa)
+    (wyznanie chrzescijanstwo)
+    (wiek_test pelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni europejska)
+=>
+(println "Kotlet schabowy, ziemniaki duszone, rosół, placek drożdzowy, sok jabłkowy."))
+
+(defrule MAIN::menu-40
+    (impreza stypa)
+    (wyznanie chrzescijanstwo)
+    (wiek_test pelnoletni)
+    (typ_diety miesna)
+    (rodzaj_kuchni azjatycka)
+=>
+(println "Gulasz wieprzowy Gong Bao, ryż basmati, sernik z wiórkami kokosowymi, surówka z pora, napój z aloesu."))

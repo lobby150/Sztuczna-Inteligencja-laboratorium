@@ -141,7 +141,7 @@
     (typ_diety wegetarianska)
     (rodzaj_kuchni europejska)
 =>
-(println "Tort wisniowy z beza, pasta z baklazana, pieczone ziemniaki, salatka z pora, sok jablkowy, wodka Finlandia."))
+(println "Tort wisniowy z beza, pasta z baklazana, pieczone ziemniaki, salatka z pora, sok jablkowy."))
 
 (defrule MAIN::menu-4
     (impreza wesele)
@@ -150,7 +150,7 @@
     (typ_diety wegetarianska)
     (rodzaj_kuchni azjatycka)
 =>
-(println "Tort pomaranczowy z marakuja, sajgonki z warzywami, krewetki z orzechami, napoj aloesowy,sake."))
+(println "Tort pomaranczowy z marakuja, sajgonki z warzywami, krewetki z orzechami, napoj aloesowy."))
 
 (defrule MAIN::menu-5
     (impreza wesele)
@@ -159,7 +159,7 @@
     (typ_diety miesna)
     (rodzaj_kuchni europejska)
 =>
-(println "Grillowany stek, salata, ziemniaki, winoTort wiśniowy z bezą, kaczka nadziewana, pyzy, sos pieczeniowy, sok jabłkowy."))
+(println "Tort wiśniowy z bezą, kaczka nadziewana, pyzy, sos pieczeniowy, sok jabłkowy."))
 
 (defrule MAIN::menu-6
     (impreza wesele)
@@ -177,7 +177,7 @@
     (typ_diety miesna)
     (rodzaj_kuchni europejska)
 =>
-(println "Tort wiśniowy z bezą, kaczka nadziewana, pyzy, sos pieczeniowy, sok jabłkowy, wódka Finlandia."))
+(println "Tort wiśniowy z bezą, kaczka nadziewana, pyzy, sos pieczeniowy, sok jabłkowy."))
 
 (defrule MAIN::menu-8
     (impreza wesele)
@@ -186,7 +186,7 @@
     (typ_diety miesna)
     (rodzaj_kuchni azjatycka)
 =>
-(println "Tort pomarańczowy z marakują, kurczak w cieście w sosie sojowym, ryż basmati, sos curry, napój aloesowy, sake."))
+(println "Tort pomarańczowy z marakują, kurczak w cieście w sosie sojowym, ryż basmati, sos curry, napój aloesowy."))
 
 (defrule MAIN::menu-9
     (impreza wesele)

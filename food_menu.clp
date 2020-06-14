@@ -475,3 +475,741 @@
     (rodzaj_kuchni azjatycka)
 =>
 (println "Gulasz wieprzowy Gong Bao, ryż basmati, sernik z wiórkami kokosowymi, surówka z pora, napój z aloesu."))
+
+(defrule MAIN::menu-41
+	(impreza stypa)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Zupa pomidorowa, ziemniaki w sosie koperkowym, sałatka warzywna, kotlety jajeczne, sok jabłkowy"))
+
+(defrule MAIN::menu-42
+	(impreza stypa)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Zupa z grzybami mun, ryż w sosie curry, surówka z warzyw orientalnych, kotlet z cieciorki, napój z aloesu"))
+
+(defrule MAIN::menu-43
+	(impreza stypa)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Zupa pomidorowa, ziemniaki w sosie koperkowym, sałatka warzywna, kotlety jajeczne, sok jabłkowy, kieliszek wódki"))
+
+(defrule MAIN::menu-44
+	(impreza stypa)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Zupa z grzybami mun, ryż w sosie curry, surówka z warzyw orientalnych, kotlet z cieciorki, napój z aloesu, kieliszek wódki"))
+
+(defrule MAIN::menu-45
+	(impreza stypa)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Zupa rybna po żydowsku, kotlet drobiowy, ziemniaki duszone, placek drożdzowy, sok jabłkowy"))
+
+(defrule MAIN::menu-46
+	(impreza stypa)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Złoty joich,  Klopsiki wołowo-jagnięce z bobem i cytryną, pascha, lemoniada miętowa"))
+
+(defrule MAIN::menu-47
+	(impreza stypa)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Rosół, kotlet drobiowy, ziemniaki duszone, placek drożdzowy, sok jabłkowy, kieliszek wódki"))
+
+(defrule MAIN::menu-48
+	(impreza stypa)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Złoty joich,  Klopsiki wołowo-jagnięce z bobem i cytryną, pascha, lemoniada miętowa, kieliszek araku"))
+
+(defrule MAIN::menu-49
+	(impreza spotkanie_biznesowe)
+	(wyznanie islam)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Pasta z bakłażana, pieczone ziemniaki, sałatka z pora, sok jabłkowy"))
+
+(defrule MAIN::menu-50
+	(impreza spotkanie_biznesowe)
+	(wyznanie islam)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Sajgonki z warzywami, krewetki z orzechami, napój aloesowy"))
+
+(defrule MAIN::menu-51
+	(impreza spotkanie_biznesowe)
+	(wyznanie islam)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Pasta z bakłażana, pieczone ziemniaki, sałatka z pora, sok jabłkowy"))
+
+(defrule MAIN::menu-52
+	(impreza spotkanie_biznesowe)
+	(wyznanie islam)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Sajgonki z warzywami, krewetki z orzechami, napój aloesowy"))
+
+(defrule MAIN::menu-53
+	(impreza spotkanie_biznesowe)
+	(wyznanie islam)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Kaczka nadziewana, pyzy, sos pieczeniowy, sok jabłkowy"))
+
+(defrule MAIN::menu-54
+	(impreza spotkanie_biznesowe)
+	(wyznanie islam)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Bulgur, duszona baranina, harrisa, lemoniada miętowa"))
+
+(defrule MAIN::menu-55
+	(impreza spotkanie_biznesowe)
+	(wyznanie islam)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Kaczka nadziewana, pyzy, sos pieczeniowy, sok jabłkowy"))
+
+(defrule MAIN::menu-56
+	(impreza spotkanie_biznesowe)
+	(wyznanie islam)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Bulgur, duszona baranina, harrisa, lemoniada miętowa"))
+
+(defrule MAIN::menu-57
+	(impreza spotkanie_biznesowe)
+	(wyznanie chrzescijanin)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Krem borowikowy, cukinia zapiekana z pomidorami i serem, kasza, creme brulee, sok jabłkowy"))
+
+(defrule MAIN::menu-58
+	(impreza spotkanie_biznesowe)
+	(wyznanie chrzescijanin)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Zupa z grzybami mun, ryż basmati z sosem curry, sajgonki warzywne, napój o smaku marakui"))
+
+(defrule MAIN::menu-59
+	(impreza spotkanie_biznesowe)
+	(wyznanie chrzescijanin)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Krem borowikowy, cukinia zapiekana z pomidorami i serem, kasza, creme brulee, sok jabłkowy, whisky "))
+
+(defrule MAIN::menu-60
+	(impreza spotkanie_biznesowe)
+	(wyznanie chrzescijanin)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Zupa z grzybami mun, ryż basmati z sosem curry, sajgonki warzywne, napój o smaku marakui, sake
+"))
+
+(defrule MAIN::menu-61
+	(impreza spotkanie_biznesowe)
+	(wyznanie chrzescijanin)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Krem borowikowy, kluseczki półfrancuskie, bouef strogonow, creme brulee, sok jabłkowy"))
+
+(defrule MAIN::menu-62
+	(impreza spotkanie_biznesowe)
+	(wyznanie chrzescijanin)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "krewetki zapiekane z migdałami, chińskie pierożki z wieprzowiną, surówka z awokado, napój aloesowy"))
+
+(defrule MAIN::menu-63
+	(impreza spotkanie_biznesowe)
+	(wyznanie chrzescijanin)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Krem borowikowy, kluseczki półfrancuskie, bouef strogonow, creme brulee, sok jabłkowy, whisky "))
+
+(defrule MAIN::menu-64
+	(impreza spotkanie_biznesowe)
+	(wyznanie chrzescijanin)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "krewetki zapiekane z migdałami, chińskie pierożki z wieprzowiną, surówka z awokado, napój aloesowy, sake"))
+
+(defrule MAIN::menu-65
+	(impreza spotkanie_biznesowe)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Teiglach, czulent z ogórkami, zupa porowa z miodem, kulki z siekanej ryby, sok jabłkowy"))
+
+(defrule MAIN::menu-66
+	(impreza spotkanie_biznesowe)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Zupa z grysikiem, gołąbki po żydowsku z ryżem, kuskus, herbata miętowa"))
+
+(defrule MAIN::menu-67
+	(impreza spotkanie_biznesowe)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Teiglach, czulent z ogórkami, zupa porowa z miodem, kulki z siekanej ryby, sok jabłkowy, whisky"))
+
+(defrule MAIN::menu-68
+	(impreza spotkanie_biznesowe)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Zupa z grysikiem, gołąbki po żydowsku z ryżem, kuskus, herbata miętowa, arak"))
+
+(defrule MAIN::menu-69
+	(impreza spotkanie_biznesowe)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Rosół, Gefilte fish, frytki belgijskie, sok jabłkowy"))
+
+(defrule MAIN::menu-70
+	(impreza spotkanie_biznesowe)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Zupa rybna po żydowsku,  Klopsiki wołowo-jagnięce z bobem i cytryną, kuskus, herbata miętowa"))
+
+(defrule MAIN::menu-71
+	(impreza spotkanie_biznesowe)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Rosół, Gefilte fish, frytki belgijskie, sok jabłkowy, whisky"))
+
+(defrule MAIN::menu-72
+	(impreza spotkanie_biznesowe)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Zupa rybna po żydowsku,  Klopsiki wołowo-jagnięce z bobem i cytryną, kuskus, herbata miętowa, arak"))
+
+(defrule MAIN::menu-73
+	(impreza urodziny)
+	(wyznanie islam)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Tort czekoladowy, Rolada serowa z pieczarkami, sałatka grecka, sok jabłkowy"))
+
+(defrule MAIN::menu-74
+	(impreza urodziny)
+	(wyznanie islam)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tort z polewą truskawkową, Bakłżany faszerowane kuskusem, hummus, herbata miętowa"))
+
+(defrule MAIN::menu-75
+	(impreza urodziny)
+	(wyznanie islam)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Tort czekoladowy, Rolada serowa z pieczarkami, sałatka grecka, sok jabłkowy"))
+
+(defrule MAIN::menu-76
+	(impreza urodziny)
+	(wyznanie islam)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tort z polewą truskawkową, Bakłżany faszerowane kuskusem, hummus, herbata miętowa"))
+
+(defrule MAIN::menu-77
+	(impreza urodziny)
+	(wyznanie islam)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Tort wiśniowy, tadżin, sałatka grecka, frytki belgijskie, herbata miętowa"))
+
+(defrule MAIN::menu-78
+	(impreza urodziny)
+	(wyznanie islam)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tort z polewą truskawkową, Tortilla z kurczakiem z przyprawą curry, Fettusz, napój aloesowy"))
+
+(defrule MAIN::menu-79
+	(impreza urodziny)
+	(wyznanie islam)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Tort wiśniowy, tadżin, sałatka z pomidorów i ogórków, kuskus, herbata miętowa"))
+
+(defrule MAIN::menu-80
+	(impreza urodziny)
+	(wyznanie islam)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tort z polewą truskawkową, Tortilla z kurczakiem z przyprawą curry, Fettusz, napój aloesowy"))
+
+(defrule MAIN::menu-81
+	(impreza urodziny)
+	(wyznanie chrzescijanstwo)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Tort czekoladowy, Rolada serowa z pieczarkami, sałatka grecka, sok pomarańczowy"))
+
+(defrule MAIN::menu-82
+	(impreza urodziny)
+	(wyznanie chrzescijanstwo)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tort z polewą wiśniową, sajgonki wegetariańskie, sałatka rojak, woda kokosowa"))
+
+(defrule MAIN::menu-83
+	(impreza urodziny)
+	(wyznanie chrzescijanstwo)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Tort czekoladowy, Rolada serowa z pieczarkami, sałatka grecka, piwo"))
+
+(defrule MAIN::menu-84
+	(impreza urodziny)
+	(wyznanie chrzescijanstwo)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tort z polewą wiśniową, sajgonki wegetariańskie, sałatka rojak, Shochu"))
+
+(defrule MAIN::menu-85
+	(impreza urodziny)
+	(wyznanie chrzescijanstwo)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Tort truskawkowy z bezami, skrzydełka kurczaka, sałatka grecka, frytki belgijskie, sok z limonki"))
+
+(defrule MAIN::menu-86
+	(impreza urodziny)
+	(wyznanie chrzescijanstwo)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tort bezowy z polewą wiśniową, tajskie zielone curry z kurczakiem i kukurydzą, sałatka z kapusty pekińskiej, woda kokosowa"))
+
+(defrule MAIN::menu-87
+	(impreza urodziny)
+	(wyznanie chrzescijanstwo)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Tort truskawkowy z bezami, skrzydełka kurczaka, sałatka grecka, frytki belgijskie, grzaniec"))
+
+(defrule MAIN::menu-88
+	(impreza urodziny)
+	(wyznanie chrzescijanstwo)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tort bezowy z polewą wiśniową, tajskie zielone curry z kurczakiem i kukurydzą, sałatka z kapusty pekińskiej, sake"))
+
+(defrule MAIN::menu-89
+	(impreza urodziny)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Tort czekoladowy, pierogi z dynią, sałatka grecka, sok jabłkowy"))
+
+
+(defrule MAIN::menu-90
+	(impreza urodziny)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tort bezowy z polewą waniliową, sałatka ziemniaczana z jabłkiem i ogórkiem kiszonym, czulent z ogórkami, sok bananowy"))
+
+
+(defrule MAIN::menu-91
+	(impreza urodziny)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Tort czekoladowy, pierogi z dynią, sałatka grecka, wódka Absolut"))
+
+
+(defrule MAIN::menu-92
+	(impreza urodziny)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tort bezowy z polewą waniliową, sałatka ziemniaczana z jabłkiem i ogórkiem kiszonym, czulent z ogórkami, sake"))
+
+
+(defrule MAIN::menu-93
+	(impreza urodziny)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Tort bezowy z polewą bananową, czulent z jagnięciną, kugel na słodko, sok z liczi"))
+
+
+(defrule MAIN::menu-94
+	(impreza urodziny)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tort z polewą limonkową, stek wołowy po syczuańsku, orientalna sałatka z komosą, napój z marakui"))
+
+
+(defrule MAIN::menu-95
+	(impreza urodziny)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Tort bezowy z polewą bananową, czulent z jagnięciną, kugel na słodko, wódka Bols"))
+
+
+(defrule MAIN::menu-96
+	(impreza urodziny)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tort z polewą limonkową, stek wołowy po syczuańsku, orientalna sałatka z komosą, sake"))
+
+
+(defrule MAIN::menu-97
+	(impreza wieczor_kawalerski)
+	(wyznanie islam)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Faszerowane pieczarki portobello, grissini z sosem czosnkowym, sok z czarnej porzeczki"))
+
+(defrule MAIN::menu-98
+	(impreza wieczor_kawalerski)
+	(wyznanie islam)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Sałatka z awokado i surimi, tofu z warzywami woka, sok z liczi"))
+
+(defrule MAIN::menu-99
+	(impreza wieczor_kawalerski)
+	(wyznanie islam)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Faszerowane pieczarki portobello, grissini z sosem czosnkowym, sok z czarnej porzeczki"))
+
+(defrule MAIN::menu-100
+	(impreza wieczor_kawalerski)
+	(wyznanie islam)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Sałatka z awokado i surimi, tofu z warzywami woka, sok z liczi"))
+
+(defrule MAIN::menu-101
+	(impreza wieczor_kawalerski)
+	(wyznanie islam)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Udka z kurczaka, sałatka grecka, deska serów, napój aloesowy"))
+
+(defrule MAIN::menu-102
+	(impreza wieczor_kawalerski)
+	(wyznanie islam)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Makaron soba z grillowanym kurczakiem, sałatka orientalna z komosą, sok jabłkowy"))
+
+(defrule MAIN::menu-103
+	(impreza wieczor_kawalerski)
+	(wyznanie islam)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Udka z kurczaka, sałatka grecka, deska serów, napój aloesowy"))
+
+(defrule MAIN::menu-104
+	(impreza wieczor_kawalerski)
+	(wyznanie islam)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Makaron soba z grillowanym kurczakiem, sałatka orientalna z komosą, sok jabłkowy"))
+
+
+(defrule MAIN::menu-105
+	(impreza wieczor_kawalerski)
+	(wyznanie chrzescijanstwo)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Ziemniak Hasselback z sosem koperkowym, cukinia z pestkami dyni, bruschetta z sosem czosnkowym, sok jabłkowy"))
+
+(defrule MAIN::menu-106
+	(impreza wieczor_kawalerski)
+	(wyznanie chrzescijanstwo)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Hinduska sałatka Raita, humus z rukwią i czerwoną papryką, sok z limonki"))
+
+(defrule MAIN::menu-107
+	(impreza wieczor_kawalerski)
+	(wyznanie chrzescijanstwo)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Ziemniaki Hasselback z sosem koperkowym, cukinia z pestkami dyni, bruschetta z sosem czosnkowym, wódka Wyborowa"))
+
+(defrule MAIN::menu-108
+	(impreza wieczor_kawalerski)
+	(wyznanie chrzescijanstwo)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Hinduska sałatka Raita, hummus z rukwią i czerwoną papryką, wódka Smirnoff"))
+
+(defrule MAIN::menu-109
+	(impreza wieczor_kawalerski)
+	(wyznanie chrzescijanstwo)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Udka z kurczaka, parówki w cieście francuskim, zupa meksykańska, sok jabłkowy"))
+
+(defrule MAIN::menu-110
+	(impreza wieczor_kawalerski)
+	(wyznanie chrzescijanstwo)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Wieprzowina na ostro z orzechami nerkowca, grissini z sosem słodko-kwaśnym, sałatka z makaronem ryżowym, woda kokosowa"))
+
+(defrule MAIN::menu-111
+	(impreza wieczor_kawalerski)
+	(wyznanie chrzescijanstwo)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Udka z kurczaka, parówki w cieście francuskim, zupa meksykańska, koniak"))
+
+(defrule MAIN::menu-112
+	(impreza wieczor_kawalerski)
+	(wyznanie chrzescijanstwo)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Wieprzowina na ostro z orzechami nerkowca, grissini z sosem słodko-kwaśnym, sałatka z makaronem ryżowym, sake"))
+
+(defrule MAIN::menu-113
+	(impreza wieczor_kawalerski)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Falafel z hummusem, kanapki z kalarepty, sałatka grecka, sok jabłkowy
+"))
+
+(defrule MAIN::menu-114
+	(impreza wieczor_kawalerski)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Sałatka z dynią w curry, tosty z pomidorową salsą, lassi różane
+"))
+
+(defrule MAIN::menu-115
+	(impreza wieczor_kawalerski)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni europejska)
+=>
+(println "Falafel z hummusem, kanapki z kalarepty, sałatka grecka, wódka Wyborowa
+"))
+
+(defrule MAIN::menu-116
+	(impreza wieczor_kawalerski)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety wegetarianska)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Sałatka z dynią w curry, tosty z pomidorową salsą, sake
+"))
+
+(defrule MAIN::menu-117
+	(impreza wieczor_kawalerski)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Stek wołowy, sałatka grecka, grissini z sosem czosnkowym, sok jabłkowy
+"))
+
+(defrule MAIN::menu-118
+	(impreza wieczor_kawalerski)
+	(wyznanie judaizm)
+	(wiek_test niepelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tajwańska zupa z wołowiną, sałatka z kurczakiem curry, sok pomarańczowy
+"))
+
+(defrule MAIN::menu-119
+	(impreza wieczor_kawalerski)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni europejska)
+=>
+(println "Stek wołowy, sałatka grecka, grissini z sosem czosnkowym, wódka Bols
+"))
+
+(defrule MAIN::menu-120
+	(impreza wieczor_kawalerski)
+	(wyznanie judaizm)
+	(wiek_test pelnoletni)
+	(typ_diety miesna)
+	(rodzaj_kuchni azjatycka)
+=>
+(println "Tajwańska zupa z wołowiną, sałatka z kurczakiem curry, wódka Absolut
+"))
